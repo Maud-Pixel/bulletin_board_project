@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<head>
+
+</head>
+
+<!-- ATTENTION MODIFIER HREF, ET PHP INCLUDE PLUS TARD S'IL FAUT-->
+<body>
+
+  <div class="board_wrap">
+
+    <!-- add bottom margin later -->
+    <div class ="nav_list">
+      <a class="home_icon" href="#"></a>
+      <span>Home</span>
+
+      <!-- ajoute liens pour savoir où on est situés, nom en rapport avec la classe -->
+      <?php include("nav_list.php"); ?>
+      
+      <!-- END OF NAVLIST-->
+    </div>
+
+
+
+    <div class="topic_wrap">
+
+      <!-- add bottom margin -->
+      <div class="topic_title" href="#">
+        
+        <!-- affiche le board actuel-->
+
+        <?php include("topic_title.php"); ?>
+
+      </div>
+      
+      <!-- add bottom margin -->
+      <div class="rules_wrap">
+        <div class="rules_inner">
+          <a href="#">Forum rules</a>
+        </div>
+      </div>
+
+
+      <!-- END OF TOPIC WRAP-->
+    </div>
+
+
+
+
+
+  </div>
+</body>
+
+
+</html>
