@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<!-- ATTENTION MODIFIER HREF, ET PHP INCLUDE PLUS TARD S'IL FAUT-->
+<!-- ATTENTION MODIFIER HREF, ET PHP INCLUDE ( Si besoin ), AJOUTER IDs AU TAGS, + i class icons-->
 
 
 <!-- J'AI VOLONTAIREMENT MIS DES ELEMENTS STATIQUES POUR UN MEILLEUR INDICE VISUEL
@@ -19,31 +19,30 @@ IL RESTE ENCORE LE STYLE A FAIRE POUR UN MEILLEUR APPERCU
 -->
 
 <body>
-
+  <!-- MAIN WRAP -->
   <div class="board_wrap">
 
 
+    <!-- nav list -->
+    <!-- savoir où on est situés sur le forum -->
     <div class="nav_list">
-      <a class="home_icon" href="#"></a>
-      <a href="#">Home > Board Index > Category One > Topic</a>
-
-      <!-- ajoute liens pour savoir où on est situés -->
-      <!-- <?php include("nav_list.php"); ?> -->
+      <i class="icon fa-home fa-fw" href="#"></i>
+      <a href="#">Home > Board Index > Category One > Topic
+        <!-- <?php include("nav_list.php"); ?> -->
+      </a>
 
     </div>
     <!-- END OF NAVLIST-->
 
 
+
+
+    <!-- INNER WRAP -->
     <div class="board_inner">
 
-
+      <!-- affiche le board actuel-->
       <div class="board_title" href="#">
-
-
-        <!-- affiche le board actuel-->
-
         <!-- <?php include("board_title.php"); ?> -->
-
       </div>
 
 
@@ -58,7 +57,7 @@ IL RESTE ENCORE LE STYLE A FAIRE POUR UN MEILLEUR APPERCU
           </div>
         </div>
 
-        <a class="topic_new">
+        <a class="topic_new" id="new_topic">
           <span>New Topic</span>
           <i class="icon fa-pencil fa-fw"></i>
           <!-- <?php include("topic_create.php"); ?> -->
@@ -69,7 +68,7 @@ IL RESTE ENCORE LE STYLE A FAIRE POUR UN MEILLEUR APPERCU
             <input id="search" class="search_input" placeholder="Search this forum...">
             <button class="search_button" type="submit">
               <i class="icon fa-search fa-fw" href="#"></i>
-              <!-- <?php include("search.php"); ?> -->
+              <!-- <?php include("search.php"); ?>  -->
             </button>
             <div class="search_option">
               <i class="icon fa-cog fa-fw" href="#"></i>
@@ -89,55 +88,58 @@ IL RESTE ENCORE LE STYLE A FAIRE POUR UN MEILLEUR APPERCU
 
 
 
-      <!-- ANNOUNCEMENT dites moi si vous trouvez ca trop pourri comme nom-->
-      <div class="announcement_wrap">
-        <div class="announcement_inner">
+      <!-- ANNOUNCEMENT -->
+      <div class="annonce_wrap">
+        <div class="annonce_inner">
 
-          <div class="announcement_top">
+          <div class="annonce_top">
             <div class="section_title">Announcements</div>
             <span class="icon fa-comments" href="#"></span>
             <span class="icon fa-eye" href="#"></span>
             <span class="icon fa-clock-o" href="#"></span>
           </div>
 
-          <div class="announcement_bottom">
-            <div class="announcement_global">
+          <div class="annonce_bottom">
+            <div class="annonce_global">
 
-              <div class="announcement_left">
+              <div class="annonce_left">
 
                 <i class="icon fa-bullhorn fa-fw"></i>
 
-                <div class="announcement_message">
+                <div class="annonce_box">
 
-                  <a class="announcement_message_text"> This is a global announcement!</a>
+                  <a class="annonce_text"> This is a global announcement!</a>
 
-                  <div class="announcement_message_info">
-                    by <span href="#">Carla</span>
+                  <div class="annonce_origin">
+                    by
                     <a class="username" href="#">
+                      Carla 
                       <!-- <?php include("username.php"); ?> -->
                     </a>
                     » in
-                    <a href="#"> Unread Forum</a>
+                    <a href="#"> Unread Forum
+                      
+                    </a>
                   </div>
                 </div>
               </div>
 
-              <div class="announcement_right">
+              <div class="annonce_right">
                 <i class="icon fa-bullhorn fa-fw"></i>
 
-                <div class="announcement_posts">
+                <div class="annonce_posts">
                   454
-                  <!-- <?php include("announcement_posts_info.php"); ?> -->
+                  <!-- <?php include("annonce_posts.php"); ?> -->
                 </div>
 
-                <div class="announcement_views">
+                <div class="annonce_views">
                   8793
                   <!-- <?php include("announcement_views.php"); ?> -->
                 </div>
 
-                <div class="announcement_info">
+                <div class="annonce_info">
 
-                  <div class="announcement_username">
+                  <div class="annonce_username">
                     by <span>Carla</span>
                     <!--  <?php include("poster_username.php"); ?> -->
                     <i class="icon fa-external-link-square fa-fw"></i>
