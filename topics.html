@@ -1,49 +1,58 @@
 <!DOCTYPE html>
 <head>
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <!-- ATTENTION MODIFIER HREF, ET PHP INCLUDE PLUS TARD S'IL FAUT-->
+
 <body>
 
   <div class="board_wrap">
 
-    
-    <div class ="nav_list">
+
+    <div class="nav_list">
       <a class="home_icon" href="#"></a>
       <a href="#">Home > Board Index > Category One > Topic</a>
 
       <!-- ajoute liens pour savoir où on est situés -->
       <!-- <?php include("nav_list.php"); ?> -->
-      
+
     </div>
     <!-- END OF NAVLIST-->
 
 
     <div class="board_inner">
 
-      
-      <div class="board_info" href="#">
-        
+
+      <div class="board_title" href="#">
+
 
         <!-- affiche le board actuel-->
 
-        <!-- <?php include("topic_title.php"); ?> -->
+        <!-- <?php include("board_title.php"); ?> -->
 
       </div>
-      
+
+
+
+
       <!-- TOP BOARD ACTION -->
-      <div class="topic_action">
+      <div class="topboard_action">
 
         <div class="rules_wrap">
           <div class="rules_inner">
             <a href="#">Forum rules</a>
           </div>
         </div>
-        
+
         <a class="topic_new">
           <span>New Topic</span>
           <i class="icon fa-pencil fa-fw"></i>
+          <!-- <?php include("topic_create.php"); ?> -->
         </a>
 
         <div class="search_box">
@@ -55,25 +64,28 @@
             </button>
             <div class="search_option">
               <i class="icon fa-cog fa-fw" href="#"></i>
-            </div> 
+            </div>
           </form>
-          
+
         </div>
 
-        <div class="topic_info">
+        <div class="board_info">
           12 topics • Page 1 of 1
-          <!-- <?php include("topic_info.php"); ?> -->
+          <!-- <?php include("board_info.php"); ?> -->
         </div>
       </div>
       <!-- END OF TOP ACTION / TOP BOARD -->
 
-      
+
+
+
+
       <!-- ANNOUNCEMENT dites moi si vous trouvez ca trop pourri comme nom-->
       <div class="announcement_wrap">
         <div class="announcement_inner">
 
           <div class="announcement_top">
-            <div class="announcement_title">Announcements</div>
+            <div class="section_title">Announcements</div>
             <span class="icon fa-comments" href="#"></span>
             <span class="icon fa-eye" href="#"></span>
             <span class="icon fa-clock-o" href="#"></span>
@@ -89,7 +101,7 @@
                 <div class="announcement_message">
 
                   <a class="announcement_message_text"> This is a global announcement!</a>
-                  
+
                   <div class="announcement_message_info">
                     by <span href="#">Carla</span>
                     <a class="username" href="#">
@@ -103,7 +115,7 @@
 
               <div class="announcement_right">
                 <i class="icon fa-bullhorn fa-fw"></i>
-                
+
                 <div class="announcement_posts">
                   454
                   <!-- <?php include("announcement_posts_info.php"); ?> -->
@@ -115,10 +127,10 @@
                 </div>
 
                 <div class="announcement_info">
-                  
-                  <div class="announcement_info_username">
+
+                  <div class="announcement_username">
                     by <span>Carla</span>
-                    <!--  <?php include("username.php"); ?> -->
+                    <!--  <?php include("poster_username.php"); ?> -->
                     <i class="icon fa-external-link-square fa-fw"></i>
                   </div>
 
@@ -135,19 +147,135 @@
         </div>
       </div>
       <!-- END OF ANNOUNCEMENT-->
-      <div class=""
-      
-      
-      
-      <!-- END OF TOPIC WRAP-->
+
+
+
+      <!-- TOPICS -->
+      <div class="topic_wrap">
+
+        <div class="topic_inner">
+
+          <div class="topic_top">
+            <div class="section_title">Topics</div>
+            <span class="icon fa-comments" href="#"></span>
+            <span class="icon fa-eye" href="#"></span>
+            <span class="icon fa-clock-o" href="#"></span>
+          </div>
+
+          <div class="topic_list">
+
+            <!-- UN TOPIC -->
+            <div class="topic">
+
+              <div class="topic_left">
+                <div class="post_status" src="#">
+                </div>
+                <div class="post_text">
+                  <div class="post_title">Topic Unread (Mine)</div>
+                  <div class="post_creator">by <span>PlanetStyles</span>
+                    <!--  <?php include("post_username.php"); ?> -->
+                  </div>
+                </div>
+              </div>
+
+              <div class="topic_right">
+
+
+                <div class="topic_posts">
+                  249
+                  <!-- <?php include("topic_posts_number.php"); ?> -->
+                </div>
+
+                <div class="topic_views">
+                  4622
+                  <!-- <?php include("topic_views.php"); ?> -->
+                </div>
+
+                <div class="topic_info">
+
+                  <div class="topic_username">
+                    by <span>PlanetStyles</span>
+                    <!--  <?php include("topic_username.php"); ?> -->
+                    <i class="icon fa-external-link-square fa-fw"></i>
+                  </div>
+
+                  <div class="topic_date">
+                    Sun Oct 09, 2016 6:27pm
+                    <!--  <?php include("post_date.php"); ?> -->
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+            <!-- FIN D'UN TOPIC -->
+
+          </div>
+          <!-- FIN DE LISTE DE TOPICS-->
+
+
+        </div> <!--  end of topic_inner -->
+      </div>
+      <!-- END OF TOPICS-->
+
+
+      <!-- BOTTOM BOARD ACTION -->
+      <div class="bottomboard_action">
+
+        <a class="topic_new">
+          <span>New Topic</span>
+          <i class="icon fa-pencil fa-fw"></i>
+          <!-- <?php include("topic_create.php"); ?> -->
+        </a>
+
+        <div class="topic_menu">
+          <i class="icon fa-sort-amount-asc fa-fw"></i>
+          <div class="topic_menu_show">
+            <i class="icon fa-sort-down fa-fw"></i>
+          </div>
+        </div>
+
+        <div class="board_info">
+          12 topics • Page 1 of 1
+          <!-- <?php include("board_info.php"); ?> -->
+        </div>
+
+      </div>
+      <!-- END OF BOT ACTION -->
+
+
     </div>
+    <!-- END OF BOARD INNER-->
 
 
 
+    <!--Bottom board-->
+    <div class="bottom_board">
 
+      <div class="home_return">
+        <a href="#">
+          <i class="icon fa-angle-left fa-fw"></i>
+          <span>Return to Board Index</span>
+        </a>
+      </div>
+
+      <div class="jump">
+
+        <div class="jump_text">
+          <span>Jump to</span>
+        </div>
+
+        <div class="jump_list">
+          <i class="icon fa-sort-down fa-fw"></i>
+          <!-- <?php include("topic_jump.php"); ?> -->
+        </div>
+      </div>
+
+
+    </div>
+    <!-- END OF BOTTOM BOARD -->
 
   </div>
+  <!-- END OF BOARD WRAP-->
 </body>
-
-
 </html>
