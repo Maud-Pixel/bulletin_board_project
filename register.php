@@ -9,7 +9,7 @@
 <body>
     <!-- <?php include "header.php"; ?> -->
     <div class="register">
-        <form action="register" class="registerUser" method="POST">
+        <form class="registerUser" method="POST">
             <h2>Register</h2>
             <h3>Username</h3>
             <input type="text" placeholder="Enter your username" name="username" required id="username">
@@ -22,17 +22,17 @@
             
             <input type="submit" id='submit' value='LOGIN' >
             <script>
-            document.querySelector('#submit').addEventListener('click',()=>{
-            let password = document.querySelector('#password').value;
-            let confirmPassword = document.querySelector('#confirmPassword').value;
+                document.querySelector('#submit').addEventListener('click',()=>{
+                let password = document.querySelector('#password').value;
+                let confirmPassword = document.querySelector('#confirmPassword').value;
 
-            if (password === confirmPassword) {
+                if (password === confirmPassword) {
 
-            } else {
-                alert('Your password does not match!')
-            }
-            })
-        </script>
+                } else {
+                    alert('Your password does not match!')
+                }
+                })
+            </script>
         </form>
     </div>
     <?php
@@ -40,6 +40,8 @@
             $username = $_POST["username"];
             $email = $_POST["email"];
             $password = $_POST["password"];
+            include 'database.php';
+            global $db;
         };
 
     ?> 

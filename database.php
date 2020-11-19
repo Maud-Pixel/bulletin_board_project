@@ -1,16 +1,13 @@
-<?php 
-try {
-    $conn = new PDO("mysql:host=$servername;dbname=$forum, $username, $password");
-    // set the PDO error mode to exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "INSERT INTO users (nickname, email, password)
-    VALUES ($username, $email, $password)";
-    // use exec() because no results are returned
-    $conn->exec($sql);
-    echo "New record created successfully";
-} catch(PDOException $e) {
-    echo $sql . "<br>" . $e->getMessage();
-}
+<?php
+define('HOST', 'localhost');
+define('DB_NAME','forum');
+define('USER','root');
+define('PASS','');
 
-$conn = null;
+try {
+    $db = new PDO("mysql:host=" . HOST . ";dbname=" . DB_NAME, USER, PASS);
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    echo $e;
+}
 ?>
