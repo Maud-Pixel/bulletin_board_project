@@ -8,38 +8,137 @@
 
   <div class="board_wrap">
 
-    <!-- add bottom margin later -->
+    
     <div class ="nav_list">
       <a class="home_icon" href="#"></a>
-      <span>Home</span>
+      <a href="#">Home > Board Index > Category One > Topic</a>
 
-      <!-- ajoute liens pour savoir où on est situés, nom en rapport avec la classe -->
-      <?php include("nav_list.php"); ?>
+      <!-- ajoute liens pour savoir où on est situés -->
+      <!-- <?php include("nav_list.php"); ?> -->
       
-      <!-- END OF NAVLIST-->
     </div>
+    <!-- END OF NAVLIST-->
 
 
+    <div class="board_inner">
 
-    <div class="topic_wrap">
-
-      <!-- add bottom margin -->
-      <div class="topic_title" href="#">
+      
+      <div class="board_info" href="#">
         
+
         <!-- affiche le board actuel-->
 
-        <?php include("topic_title.php"); ?>
+        <!-- <?php include("topic_title.php"); ?> -->
 
       </div>
       
-      <!-- add bottom margin -->
-      <div class="rules_wrap">
-        <div class="rules_inner">
-          <a href="#">Forum rules</a>
+      <!-- TOP BOARD ACTION -->
+      <div class="topic_action">
+
+        <div class="rules_wrap">
+          <div class="rules_inner">
+            <a href="#">Forum rules</a>
+          </div>
+        </div>
+        
+        <a class="topic_new">
+          <span>New Topic</span>
+          <i class="icon fa-pencil fa-fw"></i>
+        </a>
+
+        <div class="search_box">
+          <form id="forum_search" methode="get" action="./yourphpfile">
+            <input id="search" class="search_input" placeholder="Search this forum...">
+            <button class="search_button" type="submit">
+              <i class="icon fa-search fa-fw" href="#"></i>
+              <!-- <?php include("search.php"); ?> -->
+            </button>
+            <div class="search_option">
+              <i class="icon fa-cog fa-fw" href="#"></i>
+            </div> 
+          </form>
+          
+        </div>
+
+        <div class="topic_info">
+          12 topics • Page 1 of 1
+          <!-- <?php include("topic_info.php"); ?> -->
         </div>
       </div>
+      <!-- END OF TOP ACTION / TOP BOARD -->
 
+      
+      <!-- ANNOUNCEMENT dites moi si vous trouvez ca trop pourri comme nom-->
+      <div class="announcement_wrap">
+        <div class="announcement_inner">
 
+          <div class="announcement_top">
+            <div class="announcement_title">Announcements</div>
+            <span class="icon fa-comments" href="#"></span>
+            <span class="icon fa-eye" href="#"></span>
+            <span class="icon fa-clock-o" href="#"></span>
+          </div>
+
+          <div class="announcement_bottom">
+            <div class="announcement_global">
+
+              <div class="announcement_left">
+
+                <i class="icon fa-bullhorn fa-fw"></i>
+
+                <div class="announcement_message">
+
+                  <a class="announcement_message_text"> This is a global announcement!</a>
+                  
+                  <div class="announcement_message_info">
+                    by <span href="#">Carla</span>
+                    <a class="username" href="#">
+                      <!-- <?php include("username.php"); ?> -->
+                    </a>
+                    » in
+                    <a href="#"> Unread Forum</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="announcement_right">
+                <i class="icon fa-bullhorn fa-fw"></i>
+                
+                <div class="announcement_posts">
+                  454
+                  <!-- <?php include("announcement_posts_info.php"); ?> -->
+                </div>
+
+                <div class="announcement_views">
+                  8793
+                  <!-- <?php include("announcement_views.php"); ?> -->
+                </div>
+
+                <div class="announcement_info">
+                  
+                  <div class="announcement_info_username">
+                    by <span>Carla</span>
+                    <!--  <?php include("username.php"); ?> -->
+                    <i class="icon fa-external-link-square fa-fw"></i>
+                  </div>
+
+                  <div class="post_date">
+                    Sun Oct 09, 2016 5:58pm
+                    <!--  <?php include("post_date.php"); ?> -->
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!-- END OF ANNOUNCEMENT-->
+      <div class=""
+      
+      
+      
       <!-- END OF TOPIC WRAP-->
     </div>
 
