@@ -16,9 +16,9 @@
             <h3>Email</h3>
             <input type="text" placeholder="Enter your Email" name="email" required id="email">
             <h3>Password</h3>
-            <input type="text" placeholder="Enter your Password?" name="password" required id="password">
+            <input type="password" placeholder="Enter your Password?" name="password" required id="password">
             <h3>Confirm Password</h3>
-            <input type="text" placeholder="Re-Enter your Password?" name="confirmPassword" required id="confirmPassword">
+            <input type="password" placeholder="Re-Enter your Password?" name="confirmPassword" required id="confirmPassword">
             
             <input type="submit" name='submit' id='submit' value='LOGIN' >
             <script>
@@ -45,13 +45,12 @@
             $email = $_POST["email"];
             $password = $_POST["password"];
 
-            echo $username;
 
             $q = $db->prepare("INSERT INTO users(nickname,email,password) VALUES(:username, :email, :password)");
             $q->execute([
                 'username' => $username,
                 'email' => $email,
-                'password' => $password
+                 'password' => $password //password_hash($password, PASSWORD_DEFAULT) 
             ]);
         }
 
