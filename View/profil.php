@@ -8,9 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="style_Maud.css">
-    <title>Inscription</title>
+    <title>Document</title>
 </head>
 <body>
+
 <div class="container-fluid">
 
         <div class="container-fluid header">
@@ -39,26 +40,10 @@
             <div class="row no-gutters d-flex">
                 <div class="col"></div>
                 <div class="col-4">
-                    <form class="align-item-center" method="post" action="inscription_post.php">
+                    <form class="align-item-center" method="get" action="profil.php">
                         <div class="form-group">
                             <label for="nickname">Pseudo</label>
                             <input type="text" class="form-control" id="nickname" name="nickname">
-                        </div>
-                        <div class="form-group">
-                            <label for="signature">Signature</label>
-                            <input type="text" class="form-control" id="signature" name="signature">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" name="email">
-                        </div>
-                        <div class="form-group">
-                            <label for="avatar">Photo</label>
-                            <input type="text" class="form-control" id="avatar" name="avatar">
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="password" class="form-control" id="password" name="password">
                         </div>
                         <button type="submit" class="btn btn-primary">Envoyer</button>
                     </form>
@@ -66,7 +51,62 @@
                 <div class="col"></div>
             </div>
         </div>
-        <div class="container-fluid footer">
+        <div class="container">
+            <div class="row no-gutters d-flex">
+                <div class="col"></div>
+                <div class="col-4">
+                    <h2>Profil membre </h2>
+        
+    <?php
+                $host = "localhost"; 
+                $dbname = "forum"; 
+                $user = "root"; 
+                $pass = "root";
+                $nickname = $_GET["nickname"];
+
+                try{
+                    $db = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
+                    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    $req = $db->prepare('SELECT * FROM users WHERE nickname = :nickname');
+                    $req->execute(array('nickname' => $nickname ));
+                    while($data = $req->fetch())
+                    {
+    ?>
+    
+                    <form class="align-item-center" method="post" action="inscription_post.php">
+                        
+                            <label for="nickname"> Pseudo</label>
+                            <input type="text" class="form-control"  value="<?php echo $data['nickname'] ?>"name="nickname">
+
+                            <label for="password">Mot de passe</label>
+                            <input type="text" class="form-control"  value="<?php echo $data['password'] ?>" name="password">
+
+                            <label for="email">Adresse email</label>
+                            <input type="text" class="form-control"  value="<?php echo $data['email'] ?>" name="email">
+                            
+
+                            <label for="avatar">Ma photo</label>
+                            <input type="text" class="form-control"  value="<?php echo $data['avatar'] ?>" name="avatar">
+
+                            <label for="signature">Signature</label>
+                            <input type="text" class="form-control"  value="<?php echo $data['signature'] ?>"name="signature">
+                       
+                    </form>
+                </div>
+                <div class="col"></div>
+            </div>
+        </div>
+        <?php 
+        
+                    }                    
+                }
+                    
+                catch(PDOException $e){
+                    echo "Erreur : " . $e->getMessage();
+                }
+            
+    ?>
+    <div class="container-fluid footer">
             <div class="row">
                 
             </div>      
@@ -74,7 +114,5 @@
         </div>
         
     </div>
-    
-
 </body>
 </html>
