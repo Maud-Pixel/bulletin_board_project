@@ -1,8 +1,5 @@
 <?php
-session_start([
-    include '../database.php';
-    global $db;
-]);
+session_start([]);
 ?>
 <html lang="en">
 <head>
@@ -30,6 +27,8 @@ session_start([
 
     <?php
     
+    include '../database.php';
+    global $db;
 
     if (isset($_GET['submit'])) {
         $username = $_GET['username'];
