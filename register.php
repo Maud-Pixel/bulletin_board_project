@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,11 +28,7 @@
             let password = document.querySelector('#password').value;
             let confirmPassword = document.querySelector('#confirmPassword').value;
 
-            if (password === confirmPassword) {
-
-            } else {
-                alert('Your password does not match!')
-            }
+            if (password != confirmPassword) { alert('Your password does not match!')}
             })
         </script>
         </form>
@@ -50,7 +48,7 @@
             $q->execute([
                 'username' => $username,
                 'email' => $email,
-                 'password' => $password //password_hash($password, PASSWORD_DEFAULT) 
+                'password' => $password //password_hash($password, PASSWORD_DEFAULT) 
             ]);
         }
 
