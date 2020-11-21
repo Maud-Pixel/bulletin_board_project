@@ -39,18 +39,49 @@
                         <button type="submit"class="btn btn-outline-info mb-2">envoyer</button>
                     </div>
                 </div>
+                <?php 
+                $host = "localhost"; 
+                $dbname = "forum"; 
+                $user = "root"; 
+                $pass = "root";
+
+                try
+                {
+                $pdo = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
+                $response = $pdo->query("SELECT * FROM messages");
+                
+                while($data = $response->fetch())
+                {
+                    $response2 = $pdo->query("SELECT id, nickname FROM users WHERE id=" . $data['user_id']);
+                   
+                    
+                ?>
                <div class="row row-message">
                     <div class="col-2 col-content-message">
                         <img class="card-img-top img-fluid message-photo d-block mx-auto" src="../images/avatar_autre.jpg" style="width: 150px;" alt="avatar_autre">
                         <p class="message-position">Member</p>
-                        <p class="message-identity" >My name</p>
+                        <?php while($datas = $response2->fetch())
+                        { ?>
+                        <p class="message-identity" ><?php echo $datas['nickname'];} ?></p>
                     </div>
                     <div class="col-10 col-content-message">
-                        <p>message</p>
+                        <p><?php echo $data['title'];?></p>
+                        <p><?php echo $data['content'];?></p>
                         <p class="message-signature">signature</p>
+                        <p><?php echo $data['creation_date'];?></p>
                     </div>
                 </div>
-        </div>  
+             </div>  
+             <?php 
+             $response->closeCursor(); // Termine le traitement de la requête
+                 }
+                }
+                catch(Exception $e)
+                    {
+                        die('Erreur : '.$e->getMessage());
+                    }
+
+             ?>
     </div>
     <div class="row-fluid footer ">
     </div>
@@ -63,31 +94,3 @@
     width: 10vw;
 }
 </style>
-<?php 
- $host = "localhost"; 
- $dbname = "forum"; 
- $user = "root"; 
- $pass = "root";
- $content = $_GET["content"];
-
- try{
-     $db = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
-     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-     $sth = $dbco->prepare("
-        INSERT INTO messages(content)
-        VALUES (:content)
-    ");
-    $sth->execute(array(
-                        ':content' => $content,
-                        ));
-    
-    echo "Entrée ajoutée dans la table";
-    header("Location: message.php");
-}
-      
-catch(PDOException $e){
-    echo "Erreur : " . $e->getMessage();
-}
-
-
-?>
