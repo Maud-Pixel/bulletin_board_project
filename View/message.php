@@ -24,6 +24,7 @@
                 </ol>
             </nav>
         </div>
+        <button type="button" class="btn  btn-outline-info   button-reply">Post reply</button>
         <div class="row content row-content justify-content-center ">
                 <div class="row row-message">
                     <div class="col-2 col-content-message">
@@ -35,7 +36,7 @@
                         <p>Write your message</p>
                         <textarea></textarea>
                         <p class="message-signature">signature</p>
-                        <button type="submit"class="btn btn-outline-primary mb-2">envoyer</button>
+                        <button type="submit"class="btn btn-outline-info mb-2">envoyer</button>
                     </div>
                 </div>
                <div class="row row-message">
@@ -49,12 +50,16 @@
                         <p class="message-signature">signature</p>
                     </div>
                 </div>
-        </div>
-            
-       
-        
+        </div>  
     </div>
     <div class="row-fluid footer ">
     </div>
 </body>
 </html>
+<style>
+    .button-reply 
+{
+    
+    width: 10vw;
+}
+</style>

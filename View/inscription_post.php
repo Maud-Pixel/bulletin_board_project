@@ -29,23 +29,21 @@ try
     
     //$sth appartient à la classe PDOStatement
     $sth = $dbco->prepare("
-        INSERT INTO users(nickname,signature,avatar,email,password)
-        VALUES (:nickname, :signature, :avatar, :email, :password)
+        INSERT INTO users(nickname,signature,email,password)
+        VALUES (:nickname, :signature, :email, :password)
     ");
     $sth->execute(array(
                         ':nickname' => $nickname,
                         ':signature' => $signature,
-                        ':avatar' => $avatar,
                         ':email' => $email,
                         ':password' => $password
                         ));
     echo $nickname;
     echo $signature;
-    echo $avatar;
     echo $email;
     echo $password;
     echo "Entrée ajoutée dans la table";
-    header("Location:inscription.php");
+    header("Location:test.php");
 }
       
 catch(PDOException $e){

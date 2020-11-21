@@ -32,16 +32,41 @@
 
                 <div class="card-body">
                     <p class="h1">Profile</p>
-                    <form method="" action="">
-
-                    <button type="submit" class="btn btn-md btn-outline-info mb-2 btn-block mx-auto">Envoyer</button>
+                    <form method="post" action="inscription_post.php">
+                        <div class="form-group">
+                            <label for="nickname">Pseudo</label>
+                                <div class="input-group-append">
+                                <input type="text" class="form-control" id="nickname" name="nickname">
+                                <span class="input-group-text" ><img class="img-edit"src="../images/edit.png"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="signature">Signature</label>
+                            <div class="input-group-append">
+                                <input type="text" class="form-control" id="signature" name="signature">
+                                <span class="input-group-text" ><img class="img-edit"src="../images/edit.png"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <div class="input-group-append">
+                                <input type="email" class="form-control" id="email" name="email">
+                                <span class="input-group-text" ><img class="img-edit"src="../images/edit.png"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <div class="input-group-append">
+                                <input type="password" class="form-control" id="password" name="password">
+                                <span class="input-group-text" ><img class="img-edit"src="../images/edit.png"></span>
+                            </div>
+                        </div>
+                        <div>
+                            <button type="submit" class="btn btn-md btn-outline-info mb-2 btn-block mx-auto">Envoyer</button>
+                        <div>
                     </form>
                 </div>
 
-               
-
-                <div class="card-footer">
-                </div>
             </div>
         </div>
         

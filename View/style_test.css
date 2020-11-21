@@ -15,15 +15,23 @@ ul, li
 }
 .card
 {
-    height: 70vh;
+    
     background-color:white;
     min-width: 400px;
-    max-width: 500px;
+    max-width: 1500px;
     margin-bottom: 20vh;
     border : 1px solid #9D64B9;
     
 }
-
+.img-edit
+{
+    background-color: #c7a7d7;
+    width: 20px;
+}
+.input-group-text
+{
+    background-color: #c7a7d7;
+}
 .h1
 {
     text-align: center;
@@ -41,6 +49,7 @@ ul, li
     width: 100%;
     height: 200px;
     background: linear-gradient(90deg, rgba(92,96,217,1) 0%, rgba(157,100,185,1) 50%);
+    margin-bottom: 0;
 }
 
 /*_______________
