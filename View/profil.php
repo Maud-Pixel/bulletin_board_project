@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<div class="container-fluid">
+
 
         <div class="container-fluid header">
             <div class="col navbar navbar-expand-lg justify-content-between">
@@ -31,11 +31,8 @@
                     </ul>
                 </div>
             </div>
-            <div class="row space">
-                
-            </div>
+            <div class="row space"></div>
         </div>
-
         <div class="container">
             <div class="row no-gutters d-flex">
                 <div class="col"></div>
@@ -71,8 +68,11 @@
                     $req->execute(array('nickname' => $nickname ));
                     while($data = $req->fetch())
                     {
+                        
+                         $avatar= "http://2.gravatar.com/avatar/".md5($data['email'])."?s=100&"; //voir si changement photo possible + sexe à choisir pour avatar dont 'Autre'
+                    
     ?>
-    
+                    <img src=<?php echo $avatar ?> alt="avatar">
                     <form class="align-item-center" method="post" action="inscription_post.php">
                         
                             <label for="nickname"> Pseudo</label>
@@ -83,10 +83,6 @@
 
                             <label for="email">Adresse email</label>
                             <input type="text" class="form-control"  value="<?php echo $data['email'] ?>" name="email">
-                            
-
-                            <label for="avatar">Ma photo</label>
-                            <input type="text" class="form-control"  value="<?php echo $data['avatar'] ?>" name="avatar">
 
                             <label for="signature">Signature</label>
                             <input type="text" class="form-control"  value="<?php echo $data['signature'] ?>"name="signature">
@@ -110,9 +106,9 @@
             <div class="row">
                 
             </div>      
-                </div>
-        </div>
-        
+            
     </div>
+        
+    
 </body>
 </html>

@@ -1,7 +1,9 @@
 
   
   body {
-    color: black;
+    
+    color: #5C60D9;
+    background-color:#5C60D9;
   }
   body a {
     text-decoration: none;
@@ -9,25 +11,32 @@
   
   ul, li a {
     list-style: none;
-    color: black;
+    color: white;
   }
   
   li a:hover {
-    color: #f70757;
+    color: #5C60D9;
   }
  
+  
   .col-md-4
   {
       border: 1px solid black;
       
   }
-.header
-{
-    color: red;
-    background-color: violet;
-}
+  .header
+  {
+      
+      background-color:#9D64B9;
+      padding-top: 5%;
+  }
   .formulaire
   {
       
       width: 200px;
+  }
+
+  .general_content
+  {
+    background-color: #5C60D9;
   }

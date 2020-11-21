@@ -11,11 +11,11 @@
     <title>Inscription</title>
 </head>
 <body>
-<div class="container-fluid">
+
 
         <div class="container-fluid header">
             <div class="col navbar navbar-expand-lg justify-content-between">
-                <a class="col-6 navbar-brand" href="index.html"><img src="images/coronavirus-logo.png"></a>
+                <a class="col-6 navbar-brand" href="index.html"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -30,41 +30,38 @@
                     </ul>
                 </div>
             </div>
-            <div class="row space">
-                
-            </div>
         </div>
 
-        <div class="container">
-            <div class="row no-gutters d-flex">
-                <div class="col"></div>
-                <div class="col-4">
-                    <form class="align-item-center" method="post" action="inscription_post.php">
-                        <div class="form-group">
-                            <label for="nickname">Pseudo</label>
-                            <input type="text" class="form-control" id="nickname" name="nickname">
-                        </div>
-                        <div class="form-group">
-                            <label for="signature">Signature</label>
-                            <input type="text" class="form-control" id="signature" name="signature">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" name="email">
-                        </div>
-                        <div class="form-group">
-                            <label for="avatar">Photo</label>
-                            <input type="text" class="form-control" id="avatar" name="avatar">
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="password" class="form-control" id="password" name="password">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Envoyer</button>
-                    </form>
-                </div>
-                <div class="col"></div>
-            </div>
+        <div class="container general_content">
+
+                    <div class="mx-auto col-6">
+                            <div class="justify-content-center">
+                                <img class='mx-auto image-fluid'src="../images/avatar_autre.jpg" width="150px" alt="avatar par default">
+                            </div>
+                            <form class="align-items-center" method="post" action="inscription_post.php">
+                            <div class="form-group">
+                                <label for="nickname">Pseudo</label>
+                                <input type="text" class="form-control" id="nickname" name="nickname">
+                            </div>
+                            <div class="form-group">
+                                <label for="signature">Signature</label>
+                                <input type="text" class="form-control" id="signature" name="signature">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" name="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password" name="password">
+                            </div>
+                            <div>
+                                <button type="submit" class="btn btn-primary">Envoyer</button>
+                            <div>
+                        </form>
+                    </div>
+               
+            
         </div>
         <div class="container-fluid footer">
             <div class="row">
@@ -73,8 +70,5 @@
                 </div>
         </div>
         
-    </div>
-    
-
 </body>
 </html>

@@ -21,7 +21,8 @@ $avatar = $_POST["avatar"];
 $email = $_POST["email"];
 $password = $_POST["password"];
       
-try{
+try
+{
     $dbco = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
     $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   
