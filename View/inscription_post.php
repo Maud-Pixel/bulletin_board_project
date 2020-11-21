@@ -17,8 +17,8 @@ $user = "root";
 $pass = "root";
 $nickname = $_POST["nickname"];
 $signature = $_POST["signature"];
-$avatar = $_POST["avatar"];
 $email = $_POST["email"];
+$gender = $_POST["gender"];
 $password = $_POST["password"];
       
 try
@@ -29,13 +29,14 @@ try
     
     //$sth appartient à la classe PDOStatement
     $sth = $dbco->prepare("
-        INSERT INTO users(nickname,signature,email,password)
-        VALUES (:nickname, :signature, :email, :password)
+        INSERT INTO users(nickname,signature,email,gender,password)
+        VALUES (:nickname, :signature, :email, :gender, :password)
     ");
     $sth->execute(array(
                         ':nickname' => $nickname,
                         ':signature' => $signature,
                         ':email' => $email,
+                        ':gender' =>$gender,
                         ':password' => $password
                         ));
     echo $nickname;

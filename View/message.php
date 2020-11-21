@@ -63,3 +63,31 @@
     width: 10vw;
 }
 </style>
+<?php 
+ $host = "localhost"; 
+ $dbname = "forum"; 
+ $user = "root"; 
+ $pass = "root";
+ $content = $_GET["content"];
+
+ try{
+     $db = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
+     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+     $sth = $dbco->prepare("
+        INSERT INTO messages(content)
+        VALUES (:content)
+    ");
+    $sth->execute(array(
+                        ':content' => $content,
+                        ));
+    
+    echo "Entrée ajoutée dans la table";
+    header("Location: message.php");
+}
+      
+catch(PDOException $e){
+    echo "Erreur : " . $e->getMessage();
+}
+
+
+?>

@@ -80,6 +80,13 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label for="gender">Sexe</label>
+                            <div class="input-group-append">
+                                <input type="text" class="form-control" id="gender" value="<?php echo $data['gender'] ?>" name="gender">
+                                <span class="input-group-text" ><img class="img-edit"src="../images/edit.png"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label for="email">Email</label>
                             <div class="input-group-append">
                                 <input type="email" class="form-control" id="email" value="<?php echo $data['email'] ?>" name="email">

@@ -61,6 +61,20 @@
                                 <span class="input-group-text" ><img class="img-edit"src="../images/edit.png"></span>
                             </div>
                         </div>
+                        <div class="form-group">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="femme" value="Femme">
+                                <label class="form-check-label" for="femme">Femme</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="homme" value="Homme">
+                                <label class="form-check-label" for="homme">Homme</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="autre" value="Autre" checked>
+                                <label class="form-check-label" for="autre">Autre</label>
+                            </div>
+                        </div>
                         <div>
                             <button type="submit" class="btn btn-md btn-outline-info mb-2 btn-block mx-auto">Envoyer</button>
                         <div>
