@@ -28,7 +28,7 @@ ul, li
     background-color: #c7a7d7;
     width: 20px;
 }
-.input-group-text
+.input-group-text, .btn-update
 {
     background-color: #c7a7d7;
 }

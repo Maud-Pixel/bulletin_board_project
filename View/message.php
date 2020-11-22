@@ -1,5 +1,6 @@
 <?php 
     session_start();
+    $_SESSION["id"] = 2;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,22 +53,27 @@
                 
                 while($data = $response->fetch())
                 {
-                    $response2 = $pdo->query("SELECT id, nickname FROM users WHERE id=" . $data['user_id']);
+                    $user_id = $pdo->quote($data['user_id']);
+                    $response2 = $pdo->query("SELECT id, nickname, position,email FROM users WHERE id=" . $user_id);
                    
                     
                 ?>
                <div class="row row-message">
                     <div class="col-2 col-content-message">
-                        <img class="card-img-top img-fluid message-photo d-block mx-auto" src="../images/avatar_autre.jpg" style="width: 150px;" alt="avatar_autre">
-                        <p class="message-position">Member</p>
                         <?php while($datas = $response2->fetch())
-                        { ?>
+                        { $avatar= "http://2.gravatar.com/avatar/".md5($datas['email'])."?s=100&"?>
+                        <img class="card-img-top img-fluid message-photo d-block mx-auto" src=<?php echo $avatar ?> style="width: 150px;" alt="avatar_autre">
+                        <p class="message-position"><?php echo $datas['position']?></p>
                         <p class="message-identity" ><?php echo $datas['nickname'];} ?></p>
                     </div>
                     <div class="col-10 col-content-message">
                         <p><?php echo $data['title'];?></p>
                         <p><?php echo $data['content'];?></p>
-                        <p class="message-signature">signature</p>
+                        <?php 
+                        $response3 = $pdo->query("SELECT id, nickname, signature, position FROM users WHERE id=" . $data['user_id']);
+                        while($datas = $response3->fetch())
+                        { ?>
+                        <p class="message-signature"><?php echo $datas['signature'];}?></p>
                         <p><?php echo $data['creation_date'];?></p>
                     </div>
                 </div>
