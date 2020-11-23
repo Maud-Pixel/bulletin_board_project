@@ -34,10 +34,12 @@
                         <p class="message-identity" >My name</p>
                     </div>
                     <div class="col-10 col-content-message">
-                        <p>Write your message</p>
-                        <textarea></textarea>
-                        <p class="message-signature">signature</p>
-                        <button type="submit"class="btn btn-outline-info mb-2">envoyer</button>
+                        <form method="post" action="message_post.php">
+                            <p>Write your message</p>
+                            <textarea class="form-control" name="content"></textarea>
+                            <p class="message-signature">signature</p>
+                            <button type="submit"class="btn btn-outline-info mb-2">envoyer</button>
+                        </form>
                     </div>
                 </div>
                 <?php 
@@ -77,17 +79,20 @@
                         <p><?php echo $data['creation_date'];?></p>
                     </div>
                 </div>
-             </div>  
-             <?php 
-             $response->closeCursor(); // Termine le traitement de la requête
-                 }
+                <?php 
+                };
+                 $response->closeCursor(); // Termine le traitement de la requête
                 }
+                
                 catch(Exception $e)
                     {
                         die('Erreur : '.$e->getMessage());
                     }
 
              ?>
+
+             </div>  
+            
     </div>
     <div class="row-fluid footer ">
     </div>

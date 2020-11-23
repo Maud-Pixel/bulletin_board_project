@@ -17,18 +17,18 @@ $host = "localhost";
 $dbname = "forum"; 
 $user = "root"; 
 $pass = "root";
-
-
-      
+   
 try
 {
     $dbco = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
     $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $success =null;
+    
     $nickname = $_POST["nickname"];
     $signature = $_POST["signature"];  
     $email = $_POST["email"];
     $password = $_POST["password"];  
+    $emailErr = "";
+
     $query = $dbco->prepare("SELECT * FROM users WHERE id= :id");
     $query->execute(array(':id' => $_SESSION['id']));
     while($datas = $query->fetch())
@@ -48,10 +48,22 @@ try
         }
         if ((isset($_POST['email'])) && ($_POST['email'] != $datas['email']))
         {
-               
-            $sth = $dbco->prepare("UPDATE users SET email = :email WHERE id = :id");
-            $sth->execute(array(':email' => $email, ':id' => $_SESSION['id']));
-            //TO DO: inscrire succes + validation
+            if (empty($_POST["email"])) {
+                $emailErr = "Email is required";
+              } else
+               {
+                $email = test_input($_POST["email"]);
+                if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                  $emailErr = "Invalid email format";
+                }
+                else
+                {
+                    $sth = $dbco->prepare("UPDATE users SET email = :email WHERE id = :id");
+                    $sth->execute(array(':email' => $email, ':id' => $_SESSION['id']));
+                    //TO DO: inscrire succes + validation
+                }
+              }   
+            
         }
         if ((isset($_POST['password'])) && ($_POST['password'] != $datas['password']))
         {
@@ -69,8 +81,6 @@ try
 catch(PDOException $e){
     echo "Erreur : " . $e->getMessage();
 }
-
-
 
 ?>
 </body>
