@@ -39,6 +39,7 @@
                 $response = $pdo->query("SELECT id, title, content, user_id, DATE_FORMAT(creation_date, '%d/%m/%Y à %Hh%i') AS creation_date, DATE_FORMAT(edition_date, '%d/%m/%Y à %Hh%i') AS edition_date FROM messages ORDER BY creation_date DESC LIMIT 0, 3");
                 $req = $pdo->prepare('SELECT * FROM users WHERE nickname = :nickname');
                 $req->execute(array('nickname' => $_SESSION["id"]));
+                
                 while($data = $req->fetch())
                 { 
                     
@@ -66,6 +67,7 @@
                 {
                     $user_id = $pdo->quote($data['user_id']);
                     $response2 = $pdo->query("SELECT id, nickname, position,email FROM users WHERE id=" . $user_id  );
+                    $count_message = $pdo->query("SELECT COUNT(user_id) AS NumberOfMessages FROM messages WHERE user_id = $user_id");
             ?>
 
                <div class="row row-message">
@@ -74,7 +76,8 @@
                         { $avatar= "http://2.gravatar.com/avatar/".md5($datas['email'])."?s=100&"?>
                         <img class="card-img-top img-fluid message-photo d-block mx-auto" src=<?php echo $avatar ?> style="width: 150px;" alt="avatar_autre">
                         <p class="message-position"><?php echo $datas['position']?></p>
-                        <p class="message-identity" ><?php echo $datas['nickname'];} ?></p>
+                        <p class="message-identity"><?php echo $datas['nickname'];} ?></p>
+                        <p class="message-number"><?php while($datas_count = $count_message->fetch()){ echo $datas_count["NumberOfMessages"];} ?></p>
                     </div>
                     <div class="col-10 col-content-message">
                         <p><?php echo $data['title'];?></p>
