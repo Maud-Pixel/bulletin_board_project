@@ -17,6 +17,7 @@
             <img class="img-fluid image-header" src="../images/rail_duotone.png" alt="image header rail train" style="width: 100%; height: 100%;">
         </div>
         <div class="row breadcrumb">
+
             <nav aria-label="breadcrumb container-fluid">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="inscription.php">Home</a></li>
@@ -26,23 +27,7 @@
             </nav>
         </div>
         <button type="button" class="btn  btn-outline-info   button-reply">Post reply</button>
-        <div class="row content row-content justify-content-center ">
-                <div class="row row-message">
-                    <div class="col-2 col-content-message">
-                        <img class="card-img-top img-fluid message-photo d-block mx-auto" src="../images/avatar_autre.jpg" style="width: 150px;" alt="avatar_autre">
-                        <p class="message-position">Member</p>
-                        <p class="message-identity" >My name</p>
-                    </div>
-                    <div class="col-10 col-content-message">
-                        <form method="post" action="message_post.php">
-                            <p>Write your message</p>
-                            <textarea class="form-control" name="content"></textarea>
-                            <p class="message-signature">signature</p>
-                            <button type="submit"class="btn btn-outline-info mb-2">envoyer</button>
-                        </form>
-                    </div>
-                </div>
-                <?php 
+        <?php 
                 $host = "localhost"; 
                 $dbname = "forum"; 
                 $user = "root"; 
@@ -52,14 +37,37 @@
                 {
                 $pdo = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
                 $response = $pdo->query("SELECT * FROM messages");
-                
-                while($data = $response->fetch())
+                $req = $pdo->prepare('SELECT * FROM users WHERE nickname = :nickname');
+                $req->execute(array('nickname' => $_SESSION["id"]));
+                while($data = $req->fetch())
+                { 
+                    
+         ?>
+
+        <div class="row content row-content justify-content-center ">
+                 <div class="row row-message">
+                    <div class="col-2 col-content-message">
+                        <img class="card-img-top img-fluid message-photo d-block mx-auto" src="../images/avatar_autre.jpg" style="width: 150px;" alt="avatar_autre">
+                        <p name="message-position"><?php echo $data["position"];?></p>
+                        <p name="message-identity"><?php echo $data["nickname"];}?></p>
+                    </div>
+                    <div class="col-10 col-content-message">
+                        <form method="post" action="message_post.php">
+                            <p>Titre :</p>
+                            <input type="text" class="form-control" name="message_name">
+                            <p>Write your message</p>
+                            <textarea class="form-control" name="content"></textarea>
+                            <button type="submit"class="btn btn-outline-info mb-2">Sauvegarder</button>
+                        </form>
+                    </div>
+                </div>
+
+            <?php while($data = $response->fetch())
                 {
                     $user_id = $pdo->quote($data['user_id']);
                     $response2 = $pdo->query("SELECT id, nickname, position,email FROM users WHERE id=" . $user_id);
-                   
-                    
-                ?>
+            ?>
+
                <div class="row row-message">
                     <div class="col-2 col-content-message">
                         <?php while($datas = $response2->fetch())
