@@ -36,7 +36,7 @@
                 try
                 {
                 $pdo = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
-                $response = $pdo->query("SELECT * FROM messages");
+                $response = $pdo->query("SELECT id, title, content, user_id, DATE_FORMAT(creation_date, '%d/%m/%Y à %Hh%i') AS creation_date, DATE_FORMAT(edition_date, '%d/%m/%Y à %Hh%i') AS edition_date FROM messages ORDER BY creation_date DESC LIMIT 0, 3");
                 $req = $pdo->prepare('SELECT * FROM users WHERE nickname = :nickname');
                 $req->execute(array('nickname' => $_SESSION["id"]));
                 while($data = $req->fetch())
@@ -65,7 +65,7 @@
             <?php while($data = $response->fetch())
                 {
                     $user_id = $pdo->quote($data['user_id']);
-                    $response2 = $pdo->query("SELECT id, nickname, position,email FROM users WHERE id=" . $user_id);
+                    $response2 = $pdo->query("SELECT id, nickname, position,email FROM users WHERE id=" . $user_id  );
             ?>
 
                <div class="row row-message">

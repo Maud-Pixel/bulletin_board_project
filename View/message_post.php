@@ -17,16 +17,17 @@ try
     
     //$sth appartient à la classe PDOStatement
     $sth = $pdo->prepare("
-        INSERT INTO messages(title, content )
-        VALUES (:title, :content)
+        INSERT INTO messages(title, content, user_id )
+        VALUES (:title, :content, :user_id)
     ");
     $sth->execute(array(
                         ':title' => $title,
-                        ':content' => $content
+                        ':content' => $content,
+                        ':user_id' => $session_id
                         ));
    
     echo "Entrée ajoutée dans la table";
-    //header("Location:message.php");
+    header("Location:message.php");
             
     }
 catch(PDOException $e){
