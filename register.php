@@ -50,7 +50,7 @@
             $q->execute([
                 'username' => $username,
                 'email' => $email,
-                 'password' => $password //password_hash($password, PASSWORD_DEFAULT) 
+                'password' => $password //password_hash($password, PASSWORD_DEFAULT) 
             ]);
         }
 
