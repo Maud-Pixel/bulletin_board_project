@@ -19,37 +19,48 @@
 
                     try {
                         $responses = $db->query('SELECT * FROM category');
-                        $datass = $responses->fetch();
+                        $responses -> execute();
+                        $cat_title = $responses->fetchAll();
+                        foreach ($cat_title as $datass){
                     ?>
-                        <h2><?php echo $datass['category_name']; ?></h2>
-                        
+                        <h2> <?php echo $datass['category_name']; ?> </h2>
+                        <button> 
+                            <?php echo $datass['category_id']; ?>
+                        </button>
+                            <!--  cat_id === $datas[category_id] -->
                     <?php
-                
-                    
-                    } catch (PDOException $e) {
-                        echo 'Connexion échouée : ' . $e->getMessage();
-                    }
-                    try {
-                    $response = $db->query('SELECT * FROM boards');
-                        $datas = $response->fetch();
-                        while ($datas = $response->fetch()){
-                        
-                    ?>
-                    <div class="container" style="background-color:#f9f9f9">
-                        <div class="row row-cols-3" >
-                            <div class="card" style="background-color:green">
-                                <div class="card-body" style="background-color:blue">
-                                    <p class="card-title">Subject : <?php echo $datas['name']; ?> </p>
-                                    <p class="card-text">Description : <?php echo $datas['description']; ?> </p>
+                        try {
+                            $cat_id = $datass['category_id'];
+                            $response = $db->query('SELECT * FROM boards');
+                            $response -> execute(['category_id' => $cat_id]);
+                            while ($datas = $response->fetch()){
+                                if ($cat_id === $datas['category_id']){
+
+                        ?>
+                        <div class="container" style="background-color:#f9f9f9">
+                            <div class="row row-cols-3" >
+                                <div class="card">
+                                    <div class="card-body">
+                                        <p class="card-title">Subject : <?php echo $datas['name']; ?> </p>
+                                        <p class="card-text">Description : <?php echo $datas['description']; ?> </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <?php } //fin while
-                    }//fin try
-                    catch (PDOException $e) {
+                        <?php 
+                        } //fin if
+                        } //fin while
+                        }//fin try
+                        catch (PDOException $e) {
+                            echo 'Connexion échouée : ' . $e->getMessage();
+                        } // fin du catch
+                            } //fin foreach
+                
+
+                    } catch (PDOException $e) {
                         echo 'Connexion échouée : ' . $e->getMessage();
                     }
+                    
                     ?>
                     
             </div>
