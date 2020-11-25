@@ -81,8 +81,9 @@ try {
         <input type="text" class="form-control" name='userID' placeholder="userID" required>
         </div>
         <input type="submit" name="formSend" id="formSend">
+        <button type="button" id='cancel'>Cancel</button>
     </form>
-
+ 
    
    <?php $query = $db ->prepare('SELECT * FROM topics');
          $query->execute();
@@ -92,7 +93,6 @@ try {
              echo '<h4><a href="message.php">'.htmlentities($topic['title']).'</a></h4><p>'.htmlentities($topic['content']).'</p> <br>';
          }
     ?>
-    
-<script src="topics.js"></script>
+    <script src="topics.js"></script>
 </body>
 </html>
