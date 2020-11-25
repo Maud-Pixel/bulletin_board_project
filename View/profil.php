@@ -28,7 +28,7 @@
             </nav>
         </div>
         <div class="row no-gutters d-flex">
-                <div class="col"></div>
+            <div class="col"></div>
                 <div class="col-4">
                     <form class="align-item-center" method="get" action="profil.php">
                         <div class="form-group">
@@ -86,8 +86,19 @@
                                 <button type="submit" class="btn btn-update mb-2"><img class="img-edit"src="../images/edit.png"></button>
                             </div>
                         </div>
-                    
-                    
+                        <div class="form-group form-group" >
+                            <label for="birthday">Birthday</label>
+                            <div class="input-with-post-icon datepicker input-group-append">
+                                <input id="birthday"  class="form-control-plaintext" type="date" placeholder="Select date" >
+                                <button type="submit" class="btn btn-update mb-2"><img class="img-edit"src="../images/edit.png"></button>
+                         </div> 
+                         <div class="form-group form-group" >
+                            <label for="birthday">Birthday</label>
+                            <div class="input-with-post-icon datepicker input-group-append">
+                                <input id="birthday"  class="form-control-plaintext" type="date" placeholder="Select date" >
+                            <button type="submit" class="btn btn-update mb-2"><img class="img-edit"src="../images/edit.png"></button>
+                         </div> 
+
                         <div class="form-group">
                             <label for="gender">Sexe</label>
                             <div class="input-group-append">

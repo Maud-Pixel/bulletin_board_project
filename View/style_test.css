@@ -23,6 +23,11 @@ ul, li
     border : 1px solid #9D64B9;
     
 }
+
+.birthday
+{
+    border: 1px solid #f2f2f2;
+}
 .img-edit
 {
     background-color: #c7a7d7;
@@ -55,7 +60,15 @@ ul, li
 /*_______________
 message
 ______________*/
-
+.button-reply 
+{
+    
+    width: 10vw;
+}
+.search
+{
+    width: 100px;
+}
 .row-content 
 {
     background-color: #f2f2f2;
@@ -89,13 +102,23 @@ body
     min-width: 80%;
     border-radius: 10px;
     margin-top: 5vh;
-    margin-bottom: 5vh;
-    
-    
+    margin-bottom: 5vh;   
 }
-.btn-outline-info
+.row-message2
+{
+    display:none;
+}
+.row-message3
+{
+    display:block;
+}
+.btn-outline-info, .btn-outline-warning
 {
     background-color: #9D64B9;
     border: 1px solid #9D64B9;
     color:white;
 }
+.fa 
+   {
+       color: black;
+   }
