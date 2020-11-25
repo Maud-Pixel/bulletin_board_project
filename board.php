@@ -23,11 +23,13 @@
                         $cat_title = $responses->fetchAll();
                         foreach ($cat_title as $datass){
                     ?>
-                        <h2> <?php echo $datass['category_name']; ?> </h2>
-                        <button> 
-                            <?php echo $datass['category_id']; ?>
-                        </button>
+                        <br><h2> <?php echo $datass['category_name']; ?> </h2>
+                        
                             <!--  cat_id === $datas[category_id] -->
+                        <div class="container" style="background-color:#f9f9f9">
+                        
+                            <div class="row row-cols-3">
+                            
                     <?php
                         try {
                             $cat_id = $datass['category_id'];
@@ -36,20 +38,22 @@
                             while ($datas = $response->fetch()){
                                 if ($cat_id === $datas['category_id']){
 
-                        ?>
-                        <div class="container" style="background-color:#f9f9f9">
-                            <div class="row row-cols-3" >
-                                <div class="card">
+                    ?> <!-- Début HTML case sujet -->
+                        
+                                <div class="col card">
                                     <div class="card-body">
-                                        <p class="card-title">Subject : <?php echo $datas['name']; ?> </p>
-                                        <p class="card-text">Description : <?php echo $datas['description']; ?> </p>
+                                        <p class="card-title">  <a href="#" alt=''><?php echo $datas['name']; ?></a> </p>
+                                        <p class="card-text">  <?php echo $datas['description']; ?> </p>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <?php 
+                           
+                    <?php 
                         } //fin if
                         } //fin while
+                    ?>
+                     </div>
+                        </div> <!-- Fin HTML case sujet --> 
+                    <?php 
                         }//fin try
                         catch (PDOException $e) {
                             echo 'Connexion échouée : ' . $e->getMessage();
@@ -63,11 +67,9 @@
                     
                     ?>
                     
+                            
+                       
             </div>
-        </div>
-        <div class="category">
-        </div>
-        <div class="category">
         </div>
     </div>
     
