@@ -10,9 +10,9 @@
     <div class="header">
     </div>
     
-    <div class="container">
-        <div class="category">
-            <div class="sujet">
+    <div class="container" style="width:90%; margin:auto; padding:0;">
+        <div class="row row-cols-2">
+            <div class="main col-9">
                 <?php 
                     include "database.php";
                     global $db;
@@ -26,7 +26,7 @@
                         <br><h2> <?php echo $datass['category_name']; ?> </h2>
                         
                             <!--  cat_id === $datas[category_id] -->
-                        <div class="container" style="background-color:#f9f9f9">
+                        <div class="container-fluid" style="background-color:#f9f9f9">
                         
                             <div class="row row-cols-3">
                             
@@ -39,19 +39,21 @@
                                 if ($cat_id === $datas['category_id']){
 
                     ?> <!-- Début HTML case sujet -->
-                        
-                                <div class="col card">
-                                    <div class="card-body">
-                                        <p class="card-title">  <a href="#" alt=''><?php echo $datas['name']; ?></a> </p>
-                                        <p class="card-text">  <?php echo $datas['description']; ?> </p>
+                                <div class="col-sm-4" style="margin:20px 0 20px 0;">
+                                    <div onclick="location.href='topics.php';" style="cursor: pointer; height:8rem; background-color:white;">
+                                        <div class="card-body">
+                                            <p class="card-title"> <?php echo $datas['name']; ?> </p>
+                                            <p class="card-text">  <?php echo $datas['description']; ?> </p>
+                                        </div>
                                     </div>
                                 </div>
+                                
                            
                     <?php 
                         } //fin if
                         } //fin while
                     ?>
-                     </div>
+                            </div>
                         </div> <!-- Fin HTML case sujet --> 
                     <?php 
                         }//fin try
@@ -69,6 +71,11 @@
                     
                             
                        
+            </div>
+            <div class="aside col-3">
+                <div style="background-color:orange; height:100%; margin-top: 50px; text-align:center;">
+                    Je suis l'aside où Austin peut include ses last post :D 
+                </div>
             </div>
         </div>
     </div>
