@@ -16,9 +16,7 @@
         document.querySelector('.row-message3').classList.add('row-message2');
         document.querySelector('.row-message3').classList.remove('.row-message3');
     });
-    document.querySelector("#delete").addEventListener("click", () => {
-        document.querySelector(".content-message2").innerHtml = "deleted";
-    })
+    
 
 })();
 

@@ -43,7 +43,7 @@ try
     $db = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-    $req = $db->prepare("SELECT messages.content, messages.title, messages.creation_date, users.email, users.position, users.nickname, users.signature FROM messages 
+    $req = $db->prepare("SELECT messages.content, messages.title, messages.creation_date, users.id, users.email, users.position, users.nickname, users.signature FROM messages 
                          INNER JOIN users ON messages.user_id=users.id
                          WHERE content LIKE '%".$research."%' OR title LIKE '%".$research."%' ");
     
@@ -68,6 +68,11 @@ try
                         <p><?php echo $data['signature'];?></p>
                         <p><?php echo $data['creation_date'];?></p>
                     </div>
+                    <?php if ($data['id'] == $_SESSION["id"]) 
+                        {
+                        ?>
+                        <button id="delete" type="submit" name="message_deleted"  class="btn btn-outline-warning mb-2"><a href="message_delete.php?id=<?php echo $data['id']?>">Annuler</a></button>
+                        <?php } ?>
                 </div>
 <?php
 

@@ -1,5 +1,5 @@
 
-ul, li
+ul, li, button a
 {
     text-decoration: none;
     list-style: none;
@@ -117,7 +117,9 @@ body
     background-color: #9D64B9;
     border: 1px solid #9D64B9;
     color:white;
+    
 }
+
 .fa 
    {
        color: black;

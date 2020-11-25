@@ -128,7 +128,7 @@
                         if ($datas['id'] == $_SESSION["id"]) 
                         {
                         ?>
-                        <button id="delete" type="submit" class="btn btn-outline-warning mb-2">Annuler</button>
+                        <button id="delete" type="submit" name="message_deleted"  class="btn btn-outline-warning mb-2"><a href="message_delete.php?id=<?php echo $data['id']?>">Annuler</a></button>
                         <?php } ?>
                     </div>
                 </div>
