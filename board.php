@@ -43,6 +43,7 @@
                     ?> <!-- Début HTML case sujet -->
                                 <div class="col-lg-4 col-md-12 col-ms-12 col-xs-12 p-2">
                                     <div class="rounded h-100 w-100 " onclick="location.href='topics.php';" style="cursor: pointer; background-color:white;">
+                                
                                         <div class="container border-light">
                                             <div class="container card-body ">
                                                 <div class="container row row-cols-2 ">
@@ -58,7 +59,18 @@
                                                 <div class="row row-cols-3 p-3" >
                                                     <div class="col-3 ">
                                                         <div> 
-                                                            XXX
+                                                        <?php 
+                                                            try {
+                                                                $board_id = $datas['id'];
+                                                                $response_topics = $db->query('SELECT * FROM topics');
+                                                                $response_topics -> execute(['board_id' => $board_id]);
+                                                                $counted_topics = $response_topics->fetchAll();
+                                                                echo count($counted_topics);
+                                                            } //fin try
+                                                            catch (PDOException $e) {
+                                                                echo 'Connexion échouée : ' . $e->getMessage();
+                                                            } 
+                                                        ?>
                                                         </div>
                                                         <p>Topics</p>
                                                     </div>
