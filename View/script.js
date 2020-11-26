@@ -1,4 +1,4 @@
-(() => {
+
 
     let i=0;
     document.querySelector('#button_reply').addEventListener('click',()=>{
@@ -16,7 +16,10 @@
         document.querySelector('.row-message3').classList.add('row-message2');
         document.querySelector('.row-message3').classList.remove('.row-message3');
     });
-    
+    document.querySelector("#delete").addEventListener("click", ()=>
+    {
+        console.log("hello");
+    });
 
-})();
+
 

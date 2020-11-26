@@ -128,7 +128,9 @@
                         if ($datas['id'] == $_SESSION["id"]) 
                         {
                         ?>
-                        <button id="delete" type="submit" name="message_deleted"  class="btn btn-outline-warning mb-2"><a href="message_delete.php?id=<?php echo $data['id']?>">Annuler</a></button>
+                        <button id="delete" type="submit" name="message_deleted"  class="btn btn-outline-warning mb-2">
+                            <a href="message_delete.php?id=<?php echo $data['id']?>">Annuler</a> 
+                        </button>
                         <?php } ?>
                     </div>
                 </div>
@@ -141,7 +143,6 @@
                     {
                         die('Erreur : '.$e->getMessage());
                     }
-
              ?>
 
              </div>  
@@ -149,6 +150,6 @@
     </div>
     <div class="row-fluid footer ">
     </div>
-    <script src="./script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
