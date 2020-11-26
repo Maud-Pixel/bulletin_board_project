@@ -1,0 +1,21 @@
+img {
+    width: 50px;
+}
+
+.subtitle_card {
+    font-size: 0.8rem;
+    color: #e1e1e1; 
+    
+}
+
+.title_card {
+    font-size: 1.1rem;
+    color:#676767;
+    font-weight: 900;
+}
+
+.big_title {
+    font-size: 2rem;
+    color: #676767;
+    font-weight: 900;
+}
