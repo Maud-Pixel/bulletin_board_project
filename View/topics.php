@@ -19,33 +19,6 @@ include '../database.php';
 global $db;
 ?>
 
-<?php
-try {
-    if (isset($_POST['formSend'])) {
-        $query = $db->prepare('SELECT * FROM topics WHERE title=:title');
-        $query->execute(['title' => $_POST['Title']]);
-        $count = $query->rowCount();
-
-       if ($count == 0){
-    $query = $db->prepare('INSERT INTO topics(title, content, board_id, user_id) VALUES (:title,:content,:BoardID,:userID);');
-    $query->execute([
-        'title' => $_POST['Title'],
-        'content' => $_POST['Content'],
-        'BoardID' => $_POST['BoardID'],
-        'userID' => $_POST['userID']
-        ])
-?>      <div class="alert alert-success" role="alert">
-         New Topic succefully created !!
-        </div>
-    <?php
-        }
-        else{
-            ?> <div class="alert alert-danger" role="alert"><?= $_POST['Title']?> title already exist</div><?php
-        };
-    }
-} catch (PDOException $e) {
-    $error = $e->getMessage();
-}?>
 
 <?php
     try {
@@ -93,6 +66,35 @@ try {
              echo '<h4><a href="message.php">'.htmlentities($topic['title']).'</a></h4><p>'.htmlentities($topic['content']).'</p> <br>';
          }
     ?>
+    <?php
+try {
+    if (isset($_POST['formSend'])) {
+        $query = $db->prepare('SELECT * FROM topics WHERE title=:title');
+        $query->execute(['title' => $_POST['Title']]);
+        $count = $query->rowCount();
+
+        var_dump($_POST['Title']);
+       if ($count == 0){
+    $query = $db->prepare('INSERT INTO topics(title, content, category_id, user_id) VALUES (:title,:content,:BoardID,:userID);');
+    $query->execute([
+        'title' => $_POST['Title'],
+        'content' => $_POST['Content'],
+        'BoardID' => $_POST['BoardID'],
+        'userID' => $_POST['userID']
+        ])
+?>      <div class="alert alert-success" role="alert">
+         New Topic succefully created !!
+        </div>
+    <?php
+        }
+        else{
+            ?> <div class="alert alert-danger" role="alert"><?=$_POST['Title']?> title already exist</div><?php
+        };
+    }
+} catch (PDOException $e) {
+    $error = $e->getMessage();
+}?>
+
     <script src="topics.js"></script>
 </body>
 </html>

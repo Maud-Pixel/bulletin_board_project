@@ -9,8 +9,6 @@
 </head>
 <body>
 
-
-
 <div>
     <div><p class='last_active_title'>Last Posts</p></div>
 </div>
@@ -18,27 +16,32 @@
 include '../database.php';
 global $db;
 
-        $i=0;
 
-        $posts = $db->query('SELECT * FROM topics');
+
+        $posts = $db->query('SELECT * FROM topics ORDER BY creation_date DESC');
         $posts->execute();
+
+        $i=0;
         foreach($posts as $post){
             $i++;
             if($i<5){
-            echo '<p>' . htmlentities($post['title']) . '</p>';
+                $cat = $db->query('SELECT * FROM category WHERE category_id =' . $post['category_id']);
+                $cat->execute();
+
+                foreach($cat as $cats){
+                    $result = htmlentities(($cats['category_name']));
+                }
+
+            echo '<p>' .htmlentities($post['title'])  .' - '.  $result. '</p>';
             echo '<p>' . htmlentities($post['content']) . '</p>';
             $dt = (time() - strtotime($post['creation_date']));
             echo '<p> Updated ' . (idate('H',$dt)) . ' hours ago</p>';
 
 
-        $cat = $db->query('SELECT * FROM category WHERE category_id =' . $post['category_id']);
-        $cat->execute();
         
-        foreach($cat as $cats){
-            echo '<p>' . htmlentities(($cats['category_name'])) . '</p>';
+        
+            }
         }
-        }
-    }
 
         
 ?>

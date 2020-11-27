@@ -9,6 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="style_test.css">
+    <link rel="stylesheet" type="text/css" href="../markdown/markitup/markitup/skins/markitup/style.css" />
+    <link rel="stylesheet" href="../markdown/markitup/markitup/sets/bbcode/style.css">
     <title>Topic</title>
 </head>
 <body>
@@ -31,7 +33,7 @@
                 $host = "localhost"; 
                 $dbname = "forum"; 
                 $user = "root"; 
-                $pass = "root";
+                $pass = "";
 
                 try
                 {
@@ -57,7 +59,8 @@
                             <p>Titre :</p>
                             <input type="text" class="form-control" name="message_name">
                             <p>Write your message</p>
-                            <textarea class="form-control" name="content"></textarea>
+                            <?php  require_once 'Michelf/Markdown.inc.php';?>
+                            <textarea class="form-control markItUp" id="#bbcode"name="content"></textarea>
                             <button type="submit"class="btn btn-outline-info mb-2">Sauvegarder</button>
                         </form>
                     </div>
@@ -107,6 +110,14 @@
     </div>
     <div class="row-fluid footer ">
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src= "../markdown/markitup/markitup/jquery.markitup.js"></script>
+    <script src= "../markdown/markitup/markitup/sets/bbcode/set.js"></script>
+    <script type="text/javascript" >
+   $(document).ready(function() {
+      $(".markItUp").markItUp(mySettings);
+   });
+</script>
 </body>
 </html>
 <style>

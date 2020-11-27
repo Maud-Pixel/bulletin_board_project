@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+
+<!-- TOPICS -->
+
+<!-- MAIN WRAP -->
+<div class="container overlay position-relative shadow-sm rounded-lg bg-white pb-5">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent pt-5">
+      <li class="breadcrumb-item"><a href="http://localhost:8888/"><i class="fas fa-home"></i> Home</a></li>
+      <li class="breadcrumb-item" aria-current="page"><a href="http://localhost:8888/">Board Index</a></li>
+      <li class="breadcrumb-item" aria-current="page"><a href="http://localhost:8888/">Category One</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Forum One</li>
+    </ol>
+  </nav>
+
+  <div class="container-lg">
+
+    <div class="row">
+
+      <div class="col-xl-9 themed-grid-col">
+
+        <h4 class="font-weight-light text-black-50 mb-3">Topics exemple</h4>
+        <div class="alert alert-danger border-0 rounded mb-3" role="alert">
+          <a href="#!" class="alert-link">Forum rules</a>
+        </div>
+
+        <div class="board-util d-flex">
+          <button class="btn text-black rounded-pill border" type="submit">New topic
+            <i class="fas fa-pencil-alt"></i></button>
+          <!-- SEARCH -->
+          <div class="bg-light rounded rounded-pill border w-25 ml-3">
+            <div class="input-group">
+              <input type="search" placeholder="Search this forum..." aria-describedby="button-addon1"
+                class="form-control  bg-light rounded rounded-pill border-0">
+              <div class="input-group-append">
+                <button id="button-addon1" type="submit" class="btn btn-link text-primary border-right border-left"><i
+                    class="fa fa-search magnifying-glass"></i></button>
+                <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i
+                    class="fas fa-cog cog"></i></button>
+
+              </div>
+            </div>
+          </div>
+          <p class="ml-auto font-weight-normal greytext pt-2"> 12 topics · Page <strong>1</strong> of <strong>1</strong>
+          </p>
+
+          <!-- END SEARCH -->
+        </div>
+
+        <!-- ANNONCE -->
+        <div class="card mt-5 border-0">
+          <div class="grad text-black row no-gutters align-items-center w-100">
+            <div class="col">
+              <h4 class="font-weight-light">Announcements</h4>
+            </div>
+            <div class="d-none d-md-block col-6 text-muted">
+              <div class="row no-gutters align-items-center text-black">
+                <div class="col-3"><i class="fas fa-comments"></i></div>
+                <div class="col-3"><i class="fas fa-eye"></i></div>
+                <div class="col-6"><i class="fas fa-clock"></i></div>
+              </div>
+            </div>
+          </div>
+          <div class="card-body bg-light p-2">
+            <div class="forumslist shadow-sm bg-white mt-1 p-3">
+              <div class="row no-gutters text-black-50 align-items-center">
+                <div class="col-1 text-center"><i class="fas fa-bullhorn forumslist__grey"></i></div>
+                <div class="col"><a href="http://localhost/">This is an
+                    announcement!</a>
+                  <p class="text-secondary small">by <a href="#">rourouxx</a> » in <a href="#">Unread Forum</a></p>
+                </div>
+                <p class="ml-auto greytext pr-4"><i class="fas fa-bullhorn cog"></i></p>
+
+                <div class="d-none d-md-block col-6">
+                  <div class="row no-gutters pl-2 align-items-center">
+                    <div class="col-3">33</div>
+                    <div class="col-3">333</div>
+                    <div class="media col-6 align-items-center">
+                      <p>by <a href="#">Bibi</a> <a href=" #"><i class="fas fa-external-link-alt"></i></a>
+                        <span class="d-block">Monday Nov 3, 2020 3:00pm</span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- END ANNONCE -->
+
+        <!-- TOPICS -->
+
+        <div class="card mt-5 border-0 rounded mb-3">
+          <div class="grad text-black row no-gutters align-items-center w-100">
+            <div class="col">
+              <h4 class="font-weight-light">Topics</h4>
+            </div>
+            <div class="d-none d-md-block col-6 text-muted">
+              <div class="row no-gutters align-items-center text-black">
+                <div class="col-3"><i class="fas fa-comments"></i></div>
+                <div class="col-3"><i class="fas fa-eye"></i></div>
+                <div class="col-6"><i class="fas fa-clock"></i></div>
+              </div>
+            </div>
+          </div>
+          <div class="card-body bg-light p-2">
+            <div class="forumslist shadow-sm bg-white mt-1 p-3">
+              <!-- EXEMPLE POST -->
+              <div class="row no-gutters py-3 text-black-50 align-items-center">
+                <div class="col-1 text-center"><i class="fas fa-check forumslist__green"></i></div>
+                <div class="col"><a href="http://localhost/"> Your Bank Account ( Locked )</a>
+                  <p class="text-secondary small">by <a href="#"> TheMafia</a></p>
+                </div>
+
+                <div class="d-none d-md-block col-6">
+                  <div class="row no-gutters pl-2 align-items-center">
+                    <div class="col-3">33</div>
+                    <div class="col-3">333</div>
+                    <div class="media col-6 align-items-center">
+                      <p>by <a href="#">your mom</a> <a href=" #"><i class="fas fa-external-link-alt"></i></a>
+                        <span class="d-block">Sat Nov 20, 2020 7:10pm</span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- END POST -->
+
+            </div>
+          </div>
+        </div>
+
+        <!-- END TOPIC -->
+
+
+        <div class="board-util d-flex pt-3">
+          <button class="btn text-black px-4 py-2 border rounded-pill board-util__btn" type="submit">New topic
+            <i class="fas fa-pencil-alt"></i></button>
+          <!-- SEARCH -->
+          <div class="dropdown">
+            <button class="btn bg-light rounded ml-3 rounded-pill border dropdown-toggle" type="button"
+              id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-sort-amount-down-alt text-black-50"></i>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <a class="dropdown-item" href="#!">Most recent to oldest</a>
+              <a class="dropdown-item" href="#!">Oldest to most recent</a>
+              <a class="dropdown-item" href="#!">Publication date</a>
+              <a class="dropdown-item" href="#!">Most popular</a>
+              <a class="dropdown-item" href="#!">Author</a>
+            </div>
+          </div>
+          <p class="ml-auto font-weight-normal greytext pt-2"> 12 topics · Page <strong>1</strong> of <strong>1</strong>
+          </p>
+
+          <!-- END SEARCH -->
+        </div>
+
+        <div class="board-util d-flex pt-3">
+          <a href="http://localhost:8888/">Return to Board Index</a>
+
+          <div class="dropdown ml-auto">
+            <button class="btn bg-light rounded ml-3 rounded-pill border dropdown-toggle text-black-50" type="button"
+              id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Jump to
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <a class="dropdown-item" href="#!">X</a>
+              <a class="dropdown-item" href="#!">Y</a>
+              <a class="dropdown-item" href="#!">Z</a>
+              <a class="dropdown-item" href="#!">W</a>
+              <a class="dropdown-item" href="#!">Forum</a>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+
+      <!-- RIGHT COL -->
+
+
+      <div class="col-xl-3 themed-grid-col">
+        <!-- SEARCHBAR -->
+        <div class="bg-light rounded rounded-pill border mt-5">
+          <div class="input-group">
+            <input type="search" placeholder="Search..." aria-describedby="button-addon1"
+              class="form-control  bg-light rounded rounded-pill border-0">
+            <div class="input-group-append">
+              <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i
+                  class="fa fa-search magnifying-glass"></i></button>
+            </div>
+          </div>
+        </div>
+        <!-- END SEARCHBAR -->
+        <hr>
+        <!-- LOGIN -->
+        <div id="accordionGroup">
+          <button type="button"
+            class="btn bg-transparent font-weight-bold text-black-50 btn-block mb-2 text-left accordion-btn"
+            data-toggle="collapse" data-target="#demo">Login · Register </button>
+          <div id="demo" class="collapse show" data-parent="#accordionGroup">
+            <div class="card-body">
+              <form>
+                <div class="form-group">
+                  <label class="greytext">Username</label>
+                  <input name="" class="form-control bg-light rounded rounded-pill" type="username">
+                </div> 
+                <div class="form-group">
+                  <label class="greytext">Password</label>
+                  <input class="form-control bg-light rounded rounded-pill" type="password">
+                </div> 
+
+                <div class="form-group">
+                  <div class="checkbox">
+                    <label class="greytext"> <input type="checkbox"> Save password </label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <button type="submit" class="btn text-white btn-login btn-block rounded rounded-pill"> Login </button>
+                </div> 
+              </form>
+
+
+            </div>
+          </div>
+        </div>
+        <p class="p-1"><a href="#">I forgot my password</a></p>
+
+        <!-- END LOGIN -->
+      </div>
+
+      <!-- END ROW -->
+    </div>
+    <!-- END CONTAINER -->
+  </div>
+  <!-- END MAIN CONTAINER -->
+
+</div>
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+  integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+  integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+
+</html>
