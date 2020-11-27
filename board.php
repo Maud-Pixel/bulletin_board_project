@@ -42,7 +42,7 @@
 
                     ?> <!-- Début HTML case sujet -->
                                 <div class="col-lg-4 col-md-12 col-ms-12 col-xs-12 p-2">
-                                    <div class="rounded h-100 w-100 " onclick="location.href='topics.php';" style="cursor: pointer; background-color:white;">
+                                    <div class="rounded h-100 w-100 " onclick="location.href='../View/topics.php';" style="cursor: pointer; background-color:white;">
                                 
                                         <div class="container border-light">
                                             <div class="container card-body ">
