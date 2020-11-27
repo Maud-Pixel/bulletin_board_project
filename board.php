@@ -64,15 +64,21 @@
                                                                 $board_id = $datas['id'];
                                                                 $response_topics = $db->query('SELECT * FROM topics');
                                                                 $response_topics -> execute(['board_id' => $board_id]);
-                                                                $counted_topics = $response_topics->fetchAll();
-                                                                echo count($counted_topics);
+                                                                while ($counted_topics = $response_topics->fetchAll()){
+                                                                    if ($board_id === $counted_topics['board_id']){
+                                                            ?>
+                                                                <p class="grey_text m-0 p-0"> <?php echo count($counted_topics); ?> </p>
+                                                            <?php
+                                                                
+                                                                    } //fin if
+                                                                } //fin while
                                                             } //fin try
                                                             catch (PDOException $e) {
                                                                 echo 'Connexion échouée : ' . $e->getMessage();
                                                             } 
                                                         ?>
                                                         </div>
-                                                        <p>Topics</p>
+                                                        <p class="middle_text m-0 p-0">Topics</p>
                                                     </div>
                                                     <div class="col-3">
                                                         <div> 

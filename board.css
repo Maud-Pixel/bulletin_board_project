@@ -19,3 +19,13 @@ img {
     color: #676767;
     font-weight: 900;
 }
+
+.grey_text {
+    color:#b7b7b7;
+    font-size: 1.3rem;
+}
+
+.middle_text {
+    color: #e1e1e1;
+    font-weight: 500;
+}
