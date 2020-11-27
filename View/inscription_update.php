@@ -1,7 +1,6 @@
 <?php
     session_start();
-
-    $_SESSION["id"] = 2; //Supprimer le chiffre quand on aura la session via le login
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,6 +24,7 @@ try
     
     $nickname = $_POST["nickname"];
     $signature = $_POST["signature"];  
+    $gender = $_POST["gender"];
     $email = $_POST["email"];
     $password = $_POST["password"];  
     $emailErr = "";
@@ -45,6 +45,11 @@ try
             $sth = $dbco->prepare("UPDATE users SET signature = :signature WHERE id = :id");
             $sth->execute(array(':signature' => $signature, ':id' => $_SESSION['id']));
             //TO DO: inscrire succes + validation
+        }
+        if ((isset($_POST["gender"])) && ($_POST["gender"] != $datas["gender"]))
+        {
+            $sth = $dbco->prepare("UPDATE users SET gender = :gender WHERE id = :id");
+            $sth->execute(array("gender" => $gender, ":id" => $_SESSION['id']));
         }
         if ((isset($_POST['email'])) && ($_POST['email'] != $datas['email']))
         {

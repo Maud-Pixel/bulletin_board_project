@@ -27,7 +27,7 @@ try
                         ));
    
     echo "Entrée ajoutée dans la table";
-    header("Location:message.php");
+    header("Location:message_Maud.php");
             
     }
 catch(PDOException $e){

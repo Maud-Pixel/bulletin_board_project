@@ -1,7 +1,6 @@
 <?php 
-
 session_start();
- $_SESSION["id"] = 2;
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,16 +20,26 @@ $user = "root";
 $pass = "root";
 $nickname=$_POST["nickname"];
 $password=$_POST["password"];
+
+$remember=$_POST["remember"];
 try
 {          
     $db = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
     if (isset($_POST['nickname'])) 
     {
         $query = $db->prepare("SELECT nickname, id, password FROM users WHERE nickname = :nickname");
         $query->execute(array(":nickname" => $nickname));
         while($data = $query->fetch())
         {
+            
+            if (isset($_POST['remember']) && ($POST_['remember'] == true))
+            {
+                $_SESSION["id"] = $data["id"];
+                $_SESSION["nickname"] = $data["nickname"];
+                setCookie($data['nickname'], $data["id"], time()+3600, "/", true);
+            }
             if($data["password"] == $_POST["password"])
             {
                header("Location:message.php");

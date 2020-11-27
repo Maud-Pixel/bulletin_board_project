@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    $_SESSION["id"] = 2;
+   
 ?>
 <!DOCTYPE html>
 <html lang="en">

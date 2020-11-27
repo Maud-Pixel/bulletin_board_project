@@ -27,34 +27,21 @@
                 </ol>
             </nav>
         </div>
-        <div class="row no-gutters d-flex">
-            <div class="col"></div>
-                <div class="col-4">
-                    <form class="align-item-center" method="get" action="profil.php">
-                        <div class="form-group">
-                            <label for="nickname">Pseudo</label>
-                            <input type="text" class="form-control" id="nickname" name="nickname">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Envoyer</button>
-                    </form>
-                </div>
-                <div class="col"></div>
-            </div>
+        
     <?php
         $host = "localhost"; 
         $dbname = "forum"; 
         $user = "root"; 
         $pass = "root";
-        $nickname = $_GET["nickname"];
+       
         
 
         try{
-            if (isset($_GET['nickname'])) 
-            {
+            
                 $db = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
                 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                $req = $db->prepare('SELECT * FROM users WHERE nickname = :nickname');
-                $req->execute(array('nickname' => $nickname ));
+                $req = $db->prepare('SELECT * FROM users WHERE id = :session');
+                $req->execute(array('session' => $_SESSION["id"] ));
                 while($data = $req->fetch())
                 {
                 
@@ -86,19 +73,12 @@
                                 <button type="submit" class="btn btn-update mb-2"><img class="img-edit"src="../images/edit.png"></button>
                             </div>
                         </div>
-                        <!-- <div class="form-group form-group" >
+                        <div class="form-group form-group" >
                             <label for="birthday">Birthday</label>
                             <div class="input-with-post-icon datepicker input-group-append">
-                                <input id="birthday"  class="form-control-plaintext" type="date" placeholder="Select date" >
+                                <input id="birthday"  class="form-control-plaintext" type="date" placeholder="" >
                                 <button type="submit" class="btn btn-update mb-2"><img class="img-edit"src="../images/edit.png"></button>
-                         </div> 
-                         <div class="form-group form-group" >
-                            <label for="birthday">Birthday</label>
-                            <div class="input-with-post-icon datepicker input-group-append">
-                                <input id="birthday"  class="form-control-plaintext" type="date" placeholder="Select date" >
-                            <button type="submit" class="btn btn-update mb-2"><img class="img-edit"src="../images/edit.png"></button>
-                         </div>  -->
-
+                         </div>  
                         <div class="form-group">
                             <label for="gender">Sexe</label>
                             <div class="input-group-append">
@@ -130,7 +110,7 @@
     </div>
     <?php 
                  }
-            }                    
+                              
         }
             
         catch(PDOException $e){

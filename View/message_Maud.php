@@ -1,6 +1,7 @@
 <?php 
     session_start();
-    $_SESSION["id"] = 2;
+   
+   
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -76,7 +77,7 @@
                 while($data = $req->fetch())
                 {          
          ?>
-
+        
         <div class="row content row-content justify-content-center ">
                 <div class="row row-message row-message2">
                     <div class="col-2 col-content-message">
