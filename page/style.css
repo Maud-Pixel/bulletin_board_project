@@ -1,0 +1,164 @@
+/*General*/
+body {
+    background-color: rgb(207, 230, 238);
+    margin: 0;
+    padding: 0;
+}
+h1{
+    text-align: center;
+}
+
+ul li{
+    text-decoration: none;
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+    font-size: 20px;
+}
+
+/*General And*/
+
+/*ici vous trouvez tous qui le concerne le header And*/
+.header-rt {
+    background: url(../images/header/rail_duotone.png);
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    text-align: center;
+    font-size: 50px; 
+    color: white;
+}
+
+.block-login{
+    justify-content: space-between;
+    color: white;
+}
+/*ici vous trouvez tous qui le concerne le header And*/
+
+/*ici vous trouverez tous qui le concerne le footer*/
+footer {
+    
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    background: white;    
+}
+
+.brique-1{
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: 100px;
+    background: #7802ff;
+
+}
+
+.brique-11 {
+    height: 100px;
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 30%;
+}
+
+.barre-reseaux{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between; 
+    width: 100%;
+    padding: 0px;
+}
+.tkl {
+    color:white
+}
+.tkl:hover {
+
+    color: #8b36ed;
+}
+
+.cercle {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    border: 2px solid white;
+    border-radius: 30px;
+}
+@media (max-width: 800px) {
+
+    .cercle{
+        height: 40px;
+        width: 40px;
+    }
+
+    .barre-reseaux{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between; 
+        width: 100%;
+        padding: 0px;
+    }
+
+    h1{
+        font-size: 30px;
+    }
+}
+
+#stv{  
+    color: #fff;
+    text-shadow: 1px 1px 1px #ccc;
+    font-size: 1.5em; 
+}
+
+
+.cercle:hover {
+    background-color: white;
+}
+
+#stv:hover {
+    color: #8b36ed;
+    text-shadow: 1px 1px 1px #ccc;
+    font-size: 1.5em; 
+}
+.info-footer-hover:hover {
+    color:  #8b36ed;
+    border-bottom:  #8b36ed 1px;
+}
+
+.brique-2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    color: rgb(124, 51, 179);
+    background: rgb(45, 44, 44);
+}
+
+#info-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 800px;
+    height: auto;
+}
+
+.brique-3 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    color: rgb(124, 51, 179);
+    background: rgb(24, 24, 24);
+}
+
+
+
+/*ici vous trouvez tous qui le concerne le footer And*/
