@@ -13,7 +13,7 @@
     <div><p class='last_active_title'>Last Posts</p></div>
 </div>
 <?php
-include '../database.php';
+include '/home/emi/Becode/Bulletin-Board-Project/Static/database.php';
 global $db;
 
 

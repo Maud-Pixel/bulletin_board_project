@@ -16,7 +16,7 @@
         <div class="row row-cols-lg-2 row-cols-md-1 row-cols-ms-1 row-cols-xs-1 shadow-sm p-3 mb-5 d-flex align-content-center flex-wrap" style="margin-bottom:0 !important; background-color:white">
             <div class="col-xl-9 col-lg-9 col-md-6 col-ms-12 col-xs-12 rounded d-flex align-content-center flex-wrap"> <!-- DEBUT MAIN -->
                 <?php 
-                    include "database.php";
+                    include "Static/database.php";
                     global $db;
 
                     try {
@@ -61,11 +61,19 @@
                                                         <div> 
                                                         <?php 
                                                             try {
-                                                                $board_id = $datas['id'];
+                                                                $response_board = $db->query('SELECT * FROM boards');
+                                                                $data_board = $response_board->fetch();
+                                                            }
+                                                            catch (PDOException $e) {
+                                                                echo 'Connexion échouée : ' . $e->getMessage();
+                                                            } 
+                                                            try {
+                                                                $board_id = $data_board['id'];
                                                                 $response_topics = $db->query('SELECT * FROM topics');
                                                                 $response_topics -> execute(['board_id' => $board_id]);
                                                                 while ($counted_topics = $response_topics->fetchAll()){
-                                                                    if ($board_id === $counted_topics['board_id']){
+                                                                    if ($board_id == $counted_topics['board_id']){
+                                                                        
                                                             ?>
                                                                 <p class="grey_text m-0 p-0"> <?php echo count($counted_topics); ?> </p>
                                                             <?php
@@ -122,7 +130,7 @@
             </div> <!-- FIN MAIN -->
             <div class="container col-xl-3 col-lg-3 col-md-6 col-ms-12 col-xs-12 "> <!-- ASIDE -->
                 <div class="rounded d-flex align-content-center flex-wrap h-100 d-inline-block w-100 p-3" style="background-color:orange; text-align:center;">
-                    Je suis l'aside où Austin peut include ses last post :D 
+                    PETIT ASIDE 
                 </div>
             </div> <!-- FIN ASIDE -->
         </div>
