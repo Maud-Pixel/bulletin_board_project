@@ -23,7 +23,7 @@
             <nav aria-label="breadcrumb container-fluid">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="inscription.php">Home</a></li>
-                    <li class="breadcrumb-item"><a href="topic.php">Topic</a></li>
+                    <li class="breadcrumb-item"><a href="topics.php">Topic</a></li>
                     <li class="breadcrumb-item"><a href="message.php">Message</a></li>
                 </ol>
             </nav>
