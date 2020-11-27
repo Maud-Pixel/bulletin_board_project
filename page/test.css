@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+  }
+  
+  main {
+    display: block;
+  }
+  
+  h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+  }
+  
+  hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+  }
+  
+  pre {
+    font-family: monospace, monospace;
+    font-size: 1em;
+  }
+  
+  
+  b {
+    font-weight: bolder;
+  }
+  
+  code {
+    font-family: monospace, monospace;
+    font-size: 1em;
+  }
+  
+  kbd {
+    font-family: monospace, monospace;
+    font-size: 1em;
+  }
+  
+  samp {
+    font-family: monospace, monospace;
+    font-size: 1em;
+  }
+  
+  small {
+    font-size: 80%;
+  }
+  
+  sub {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+    bottom: -0.25em;
+  }
+  
+  sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+    top: -0.5em;
+  }
+  
+  img {
+    border-style: none;
+  }
+  
+  
+
+.header a {
+    color: white;
+    text-decoration: none;
+    transition: 0.2s;
+  }
+  
+  .header a:hover {
+    color: #CF8F3D;
+    text-decoration: none;
+  }
+  
+  .header {
+    height: 25rem;
+    background-image: linear-gradient(90deg, #333333 0%, rgba(71, 33, 23, 0.7) 0%, rgba(207, 143, 61, 0.7) 100%), url(/assets/images/coffee4.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .titre__Header {
+    color: white;
+    font-size: 6rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 250;
+    margin-top: 0 !important;
+  }
