@@ -1,0 +1,19 @@
+.last_active_title{
+    background-color: purple;
+    color: white;
+    font-size: 20px;
+}
+
+.is_connected{
+    background-color: green;
+    height: 10px;
+    width: 10px;
+    margin-left: 20%;
+}
+
+.is_not_connected{
+    background-color: red;
+    height: 10px;
+    width: 10px;
+    margin-left: 20%;
+}
